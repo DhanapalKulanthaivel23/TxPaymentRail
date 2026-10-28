@@ -16,3 +16,9 @@
 !/.github/
 !/.github/workflows/
 !/.github/workflows/ci.yml
+!/docs/
+!/docs/index.html
+!/docs/app.js
+!/docs/style.css
+!/docs/config.json
+!/base/application_test.go

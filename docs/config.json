@@ -1,0 +1,5 @@
+{
+  "gatewayURL": "",
+  "healthPath": "/health",
+  "localGatewayURL": "http://127.0.0.1:8793"
+}

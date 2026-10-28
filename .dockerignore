@@ -7,3 +7,5 @@
 !controller/**
 !libs/
 !libs/**
+!docs/
+!docs/**

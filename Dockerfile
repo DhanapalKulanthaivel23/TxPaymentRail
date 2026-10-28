@@ -5,9 +5,11 @@ COPY main.go ./
 COPY base ./base
 COPY controller ./controller
 COPY libs ./libs
+COPY docs ./docs
 RUN CGO_ENABLED=0 go build -trimpath -o /api .
 FROM scratch
 COPY --from=build /api /api
+COPY --from=build /src/docs /docs
 USER 65532:65532
 ENV LISTEN_ADDR=:8080
 EXPOSE 8080
