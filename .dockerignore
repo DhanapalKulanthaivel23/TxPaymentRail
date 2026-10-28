@@ -1,0 +1,9 @@
+*
+!go.mod
+!main.go
+!base/
+!base/**
+!controller/
+!controller/**
+!libs/
+!libs/**
