@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/DhanapalKulanthaivel23/addressrail-ai/base"
+	"github.com/DhanapalKulanthaivel23/TxPaymentRail/base"
 	"log"
 	"net/http"
 	"os"

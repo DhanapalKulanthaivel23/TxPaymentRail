@@ -22,3 +22,17 @@
 !/docs/style.css
 !/docs/config.json
 !/base/application_test.go
+
+!/docs/project-pages/
+!/docs/project-pages/index.html
+!/docs/project-pages/graph-view.mjs
+!/docs/project-pages/README.md
+!/docs/project-pages/style.css
+!/docs/project-pages/app.js
+!/docs/graph-view.test.mjs
+!/docs/WORKBENCH.md
+!/docs/workbench.mjs
+!/docs/graph-view.mjs
+!/docs/workbench.html
+!/docs/workbench.test.mjs
+!/docs/workbench.css

@@ -1,7 +1,7 @@
 package base
 
 import (
-	"github.com/DhanapalKulanthaivel23/addressrail-ai/controller"
+	"github.com/DhanapalKulanthaivel23/TxPaymentRail/controller"
 	"net/http"
 	"os"
 	"path/filepath"
@@ -10,7 +10,7 @@ import (
 func New() http.Handler {
 	api := controller.New()
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-		assets := map[string]string{"/": "index.html", "/index.html": "index.html", "/app.js": "app.js", "/style.css": "style.css", "/config.json": "config.json"}
+		assets := map[string]string{"/graph-view.mjs": "graph-view.mjs", "/workbench.html": "workbench.html", "/workbench.mjs": "workbench.mjs", "/workbench.css": "workbench.css", "/": "index.html", "/index.html": "index.html", "/app.js": "app.js", "/style.css": "style.css", "/config.json": "config.json"}
 		if name, ok := assets[r.URL.Path]; ok {
 			if r.Method != "GET" && r.Method != "HEAD" {
 				w.WriteHeader(http.StatusMethodNotAllowed)
@@ -27,6 +27,10 @@ func New() http.Handler {
 			http.ServeFile(w, r, filepath.Join(dir, name))
 			return
 		}
-		api.ServeHTTP(w, r)
+		if r.URL.Path == "/health" {
+			api.ServeHTTP(w, r)
+			return
+		}
+		http.NotFound(w, r)
 	})
 }

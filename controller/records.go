@@ -9,7 +9,7 @@ import (
 	"strings"
 	"sync"
 
-	"github.com/DhanapalKulanthaivel23/addressrail-ai/libs"
+	"github.com/DhanapalKulanthaivel23/TxPaymentRail/libs"
 )
 
 type API struct {
