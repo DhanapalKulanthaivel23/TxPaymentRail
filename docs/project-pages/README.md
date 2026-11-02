@@ -1,5 +1,5 @@
 # Collection and MCP interface
 
-Generic presentation assets for API Collections, MCP Tools, Files, Knowledge Graph and Questions & Answers. The interface uses same-origin `/catalog`, `/execute`, `/mcp` and `/upload` routes supplied by the separately running private project host. It contains no request collections, business rules, provider keys or screening data.
+API Collections, MCP Tools and the applicable file, graph and cited-answer views share the same client assets in Pages and the local Go server. The client reads `client-config.json` and resolves the published registry when a local clone has no endpoint override. It calls only the configured core catalog, execution, MCP and upload routes. No service credentials, private implementation or collection export is embedded in this directory.
 
-The private core launcher serves these pages with the existing project services. Publishing these files does not deploy those services. The original ivory, charcoal, sky-blue and copper palette is retained.
+The ivory, charcoal, sky-blue and copper palette is retained. Connection progress is shown while the catalog loads; a failed connection replaces the workspace controls with its explicit status.

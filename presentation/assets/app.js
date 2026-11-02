@@ -29,6 +29,6 @@ const preferred=model.scenarios.find(s=>s.rail==='SWIFT_CBPR'&&s.scenario==='ACC
 $('scenario').onchange=()=>{generation++;$('response').textContent='Case changed. Run the selected request to read its evidence.';$('status').textContent='Ready';graph?.clear()};
 $('help').textContent=isMCP?'Native MCP requests call the project server. Other tools adapt an existing application operation; their response includes the exact downstream request and result.':isQA?'Reference answers include source excerpts. The Gemini action uses the displayed question and retrieved reference excerpts.':'Graph, file intake and reference questions have their own pages. External connections report their current availability in the response.';
 if(!model.items.some(x=>x.upload)){const link=document.querySelector('nav a[href="#/files"]');if(link)link.hidden=true;}
-collections();
+collections();if($('loading-state'))$('loading-state').hidden=true;document.querySelector('main').setAttribute('aria-busy','false');if(model.items.length)for(const element of document.querySelectorAll('.filters,#scenario-panel,.layout,main > section:last-child'))element.hidden=false;
 
 window.addEventListener('hashchange',()=>{generation++;page=pageFromLocation(location);isMCP=page==='/mcp-tools';isFiles=page==='/files';isGraph=page==='/graph';isQA=page==='/questions';$('heading').textContent=names[page];document.title=model.name+' · '+names[page];$('discover').hidden=!isMCP;for(const a of document.querySelectorAll('nav a'))a.classList.toggle('active',a.hash==='#'+page);graph?.clear();collections();});
